@@ -35,6 +35,16 @@
   - Data is encapsulated on the sender's side, starting from the application layer to the physical layer. Each layer takes the encapsulated data from the previous layer and adds some more information to encapsulate it and some more functionalities with the data.
     - These functionalities may include proper data sequencing, error detection and control, flow control, congestion control, routing information...
 
+### Data Encapsulation - HTTP data packet
+
+- Ethernet Header
+  - Deals with routing on the LAN
+- IP Header
+  - Deals with routing on the internent
+- TCP Header:
+  - Deals with data integrity
+- HTTP Header: Deals with web data
+
 ### Why is that in the web server code, sockets are nothing more than integers? How does this work
 
 Socket numbers are like pointers in that they reference a pointer without embodying its entire structure. The OS manages and tracks socket connections because its a privileged operation.
@@ -57,3 +67,28 @@ Item gets added as the new head of a doubly linked list, this represents the mos
     - Create a new linked list node for the item. Insert it as the head of the linked list
     - Add the item to our hash table, storing the newly-created linked list node as the value.
   - O(1) time for access, same to update cache after access/eviction
+
+### TCP vs UDP
+
+- TCP is reliable due to three way handshake and reattempts to send; ideal for messaging
+  - Three-Way Handshake
+    - Client sends an intial request to the server
+    - The server acknowledges receipt of that initial request
+    - Client acknowledges acknowledgement
+- UDP is a high volume stream of data packets that skims over loss data; ideal for streaming
+
+### URL entered into browser
+
+- browser checks cache
+- if not in cache:
+  - asks OS for server's IP address
+  - OS does DNS lookup ands tells the browser what it found
+  - browser opens a TCP connection to server
+  - browser sends HTTP request via TCP to server
+  - server sends HTTP response to browser; TCP may be closed
+  - browser evaluates response (status)
+  - caches response
+- if in cache:
+  - browser decodes response
+  - browser evaluates content-type
+  - browser renders response
