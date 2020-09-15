@@ -10,6 +10,10 @@
 
 > > [Systems Design](#systemsDesign)
 
+> > > [Approach](#approach)
+
+> > > [Scaling](#scaling)
+
 <a name="internet"></a>
 
 ## The Internet
