@@ -145,7 +145,7 @@ Item gets added as the new head of a doubly linked list, this represents the mos
 - Instead if a few high-powered machines/servers, cluster a bunch of cheap ones
 - Now, if a request comes in and we have more than one server, we have to use load balancing to distribute the requests; instead of returning IP address of the server, you can return the IP address of the load balancer
 
-#### Loading Balancing
+#### Load Balancing
 
 - Request arrives at load balancer via its IP address
 - The load balancer determines which server to route it to, probably based on some metric of business -- send the request to the least busy server -- or you could differentiate the servers by the content it contains (e.g each one is responsible for a different content type). Simply, you can do round robin (first request -> server 1; second request -> server 2; etc) though this doesn't take performance, computational variability into account
