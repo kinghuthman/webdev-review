@@ -161,7 +161,7 @@ Item gets added as the new head of a doubly linked list, this represents the mos
 
 #### Disk is slow, but fast to serve up
 
-##### Replication
+#### Replication
 
 - in the Captain-Sailor model, the Captain is the database for read/writes and the Sailors are the backup copies for redundancy and reads. They should all be identical so if the Captain falls overboard, you can promote one of the Sailors to be the new Captain. There is also a Captain-Captain model where there won't be any latency for Sailor->Captain promotion, instead, there are these co-captains.
 
@@ -192,3 +192,50 @@ Item gets added as the new head of a doubly linked list, this represents the mos
 
 - memcached & redis: distributed cache, hold data in memory in key value store, they should never be source of truth
 - mapreduce: parallel processing with fault tolerance
+
+#### Database Indexing
+
+Method of improving database performance by using indices that are independent of the data in the database. It's kind of like the appendix of a book, where lookup time for instances of something are gathered in one place so you don't have to search the whole thing. By indexing we can search instead of scan - you can have an index column which is ordered in some way and acts as keys or pointers that map to fields in the database.
+
+- Advantages
+  - Can greatly query improve performance by using index seek over table scan
+- Disadvantages
+
+  - Insert, update, + delete will take a bit longer
+  - Index is a separate data structure
+
+- Non-clustered
+
+  - book index
+  - index associates a primary key with a pointer (e.g photosynthesis)
+  - can have multiple non-clustered indexes
+
+- Clustured
+
+  - reorganizes data (phonebook)
+  - basically just sorting
+  - without storing separate copies of data, you can't sort multiple fields
+
+- Composite
+
+  - Index on two or more columns
+  - eg. Create Index this_is_the_index_name ON table_name (field1, field2)
+
+- Query Optimization
+
+  - Each Query Plan is evaluated so even if a query is written like SELECT \* from table WHERE x = 'zoo' and y = 'car' -- if there's an index for y, it will go with that parameter first for the best speed
+
+- Views
+  - Way to meter information (prevent engineers from seeing all fields)
+
+#### Database Normalization
+
+- Database normalization is a process of improving relational databases by structuring them to make them extensible (minimize redesign) and reduce anomalies and unnecesary dependencies. There is a sort of hierarchy of "normal forms" which represents different standards and rules for normalization of increasing strictness. They must be satisfied in a stepwise fashion
+
+#### Kernel
+
+- The kernel is the core program of the operating system. When system calls are made to the OS by a process, the kernel is the one to handle them. It has all of the privileges.
+
+#### Mutex
+
+- The rule of mutual exclusion is that when two processes have shared access to a critical resource, they must only access it in turn. The reason is that if concurrent access is permitted, then race conditions will lead to unpredictable behavior. The only key component to an effective mutual exclusion implementation is to avoid deadlocking, where two processes are both waiting for the other to finish using a resource the other needs. It's like two people locked out of their cars with each others key in their car.
