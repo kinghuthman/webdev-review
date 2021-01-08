@@ -239,3 +239,4 @@ Method of improving database performance by using indices that are independent o
 #### Mutex
 
 - The rule of mutual exclusion is that when two processes have shared access to a critical resource, they must only access it in turn. The reason is that if concurrent access is permitted, then race conditions will lead to unpredictable behavior. The only key component to an effective mutual exclusion implementation is to avoid deadlocking, where two processes are both waiting for the other to finish using a resource the other needs. It's like two people locked out of their cars with each others key in their car.
+
