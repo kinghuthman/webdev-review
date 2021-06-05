@@ -70,3 +70,28 @@
     - stores the values
   - Invoke the helper function with the current variable
   - Recursion will pause functions until the functions invoked within, are completed
+
+## WHEN TO USE BFS & DFS
+
+- Depends on the tree
+- Time complexity of DFS & BFS are the same as we visit every node
+- Need to keep in mind space complexity
+  - Wider trees it's better to use DFS (???)
+    - How much space do we take in the process of doing that work?
+    - How much gets stored in memory at any given time(within our queue)
+    - If it's a deep search, DFS will take up more space, BFS won't keep much in queue
+- Different use cases/examples
+  - DFS - InOrder
+    - Commonly used with BST's
+      - Retrieve nodes in order
+  - DFS - PreOrder
+    - Can be used to "export" a tree structure so that is easily reconstructed or copied
+      - If you want to flatten it out, or store in a database
+      - Given to you in an order where you can reconstruct a tree
+
+## RECAP
+
+- Trees are non-linear data structures that contain a root and child nodes
+- Binary Trees can have values of any type, but at most two children for each parent
+- Binary Search Trees are a more specific version of binary trees where every node to the left of a parent is less than it's value and every node to the right of a parent is greater
+- Search through trees using DFS & BFS
