@@ -104,6 +104,18 @@ class BinarySearchTree {
     traverse(current);
     return data;
   }
+  DFSInOrder() {
+    let data = [];
+    let current = this.root;
+    const traverse = (node) => {
+      // recursion will wait for one side to be completed
+      if (node.left) traverse(node.left);
+      data.push(node.value);
+      if (node.right) traverse(node.right);
+    };
+    traverse(current);
+    return data;
+  }
 }
 
 // let tree = new BinarySearchTree();
@@ -128,3 +140,4 @@ console.log({ find: tree.find(96) });
 console.log({ BFS: tree.BFS() });
 console.log({ DFS_PreOrder: tree.DFSPreOrder() });
 console.log({ DFS_PostOrder: tree.DFSPostOrder() });
+console.log({ DFS_InOrder: tree.DFSInOrder() });

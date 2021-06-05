@@ -55,3 +55,18 @@
     - Push the values of the node to the variable that stores the values
   - Invoke the helper function with the current variable
   - Recursion will pause functions until the functions invoked within, are completed
+
+### DFS - InOrder
+
+- Traverse the left, visit the node
+- Traverse the right, visit the node
+- Recursive Steps
+  - Create a variable to store the values of nodes visited
+  - Store the root of the BST in a variable called current
+  - Write a helper function which accepts a node
+    - If the node has a left property, call the helper function with the left property on the node
+    - Push the values of the node to the variable that
+    - If the node has a right property, call the helper function with the right property on the node
+    - stores the values
+  - Invoke the helper function with the current variable
+  - Recursion will pause functions until the functions invoked within, are completed
