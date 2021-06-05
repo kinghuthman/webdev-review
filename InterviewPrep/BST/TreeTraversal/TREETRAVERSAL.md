@@ -24,3 +24,19 @@
     - If there is a left property on the node dequeued - add it to the queue
     - If there is a right property on the node dequeued - add it to the queue
   - Return the variable that stores the values
+
+## DEPTH FIRST SEARCH
+
+- Traverses through trees vertically
+
+### DFS - PreOrder
+
+- Visit the root first, then traverse entire left side, then entire right side
+- Better to be done recursively
+  - Create a variable to store the values of nodes visited
+  - Store the root of the BST in a variable called current
+  - Write a helper function which accepts a node
+    - Push the values of the node to the variable that stores the values
+    - If the node has a right property, call the helper function with the right property on the node
+  - Invoke the helper function with the current variable
+  - Recursion will pause functions until the functions invoked within, are completed
