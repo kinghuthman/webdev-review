@@ -40,3 +40,18 @@
     - If the node has a right property, call the helper function with the right property on the node
   - Invoke the helper function with the current variable
   - Recursion will pause functions until the functions invoked within, are completed
+
+### DFS - PostOrder
+
+- First traverse the entire tree or the entire branch from a given node, the left and the right. Then visit the node
+- The root is the last thing visited
+- Explore all children before we actually visit the node
+- Recursive Steps
+  - Create a variable to store the values of nodes visited
+  - Store the root of the BST in a variable called current
+  - Write a helper function which accepts a node
+    - If the node has a left property, call the helper function with the left property on the node
+    - If the node has a right property, call the helper function with the right property on the node
+    - Push the values of the node to the variable that stores the values
+  - Invoke the helper function with the current variable
+  - Recursion will pause functions until the functions invoked within, are completed
