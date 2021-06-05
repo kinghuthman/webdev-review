@@ -57,3 +57,20 @@
   - The difference between BTs and BSTs
     - Data kept in a particular order
     - Every node to the left of a parent is less than and vice versa for the right
+  - Inserting
+    - create a new node
+    - start at the root
+      - check if there is a root, if not - that node is now the root
+      - if there is a root, check if the value of the new node is greater than or less than the value of the root
+      - if it is greater
+        - check to see if there is a node to the right
+          - if there is, move to that node and repeat >< check
+            - if there is not, add that node as the right property
+          - if it is less
+            - check to see if there is a node to the left
+            - if there is, move to that node and repeat >< check
+            - if there is not, add that node as the left property
+    - Handling duplicates
+      - frequency count
+      - check at the beginning of while loop
+        - return this
