@@ -91,3 +91,20 @@
     - check to see if there a node to the left
       - if there is, move to that ndoe and repeat the steps starting from match check (===)
       - if there is not, search is over.
+
+### BIG O OF BST
+
+- Insertion - O(log n)
+- Find - O(log n)
+- It's time complexity is not guaranteed
+  - average case / best case
+  - some binary configurations are slow
+    - "weird" trees
+      - completely one-sided tree
+        - improve time-complexity by changing root of node
+- I think it's search is more level base, checks all nodes on level before moving?
+- Only works in a BST as we know how it is sorted
+- Log (wikipdeia)??
+  - 2x number of nodes: 1 extra step
+  - 4x number of nodes: 2 extra steps
+  - 8x number of nodes: 3 extra steps

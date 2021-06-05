@@ -95,3 +95,5 @@ tree.insert(3);
 
 console.log(tree, "tree");
 console.log(tree.find(96));
+
+console.log(Math.log(100), "log");
