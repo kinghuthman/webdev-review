@@ -57,7 +57,9 @@
   - The difference between BTs and BSTs
     - Data kept in a particular order
     - Every node to the left of a parent is less than and vice versa for the right
-  - Inserting
+
+### INSERTING
+
     - create a new node
     - start at the root
       - check if there is a root, if not - that node is now the root
@@ -74,3 +76,18 @@
       - frequency count
       - check at the beginning of while loop
         - return this
+
+### FIND
+
+- Start at the root
+  - check if there is a root, if not, search is over
+  - if there is a root, check if the root is the value we are looking for. If it matches, search is over
+  - if not, check to see if the value is greater than or less than the value of the root
+  - if it is greater
+    - check to see if there is a node to the right
+    - if there is, move to that node and repeat the steps starting from match check (===)
+    - if there is not, we're done searching
+  - if it is less
+    - check to see if there a node to the left
+      - if there is, move to that ndoe and repeat the steps starting from match check (===)
+      - if there is not, search is over.

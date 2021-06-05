@@ -40,6 +40,29 @@ class BinarySearchTree {
       }
     }
   }
+  find(value) {
+    if (this.root === null) return false;
+    let current = this.root;
+    let found = false;
+
+    while (current && !found) {
+      /* if it doesn't meet condition we have a match 
+      or current has been set to null(node.left & node.right === null) 
+      with variable found still false */
+      if (value < current.value) {
+        // eventually set to null which stops loop
+        current = current.left;
+      } else if (value > current.value) {
+        // eventually set to null which stops loop
+        current = current.right;
+      } else {
+        found = true;
+      }
+    }
+    if (!found) return `${found}: node doesn't exist`;
+    return `${found}: we searched for your node (${value}). 
+    Here is the result: ${JSON.stringify(current)}`;
+  }
 }
 
 // let tree = new BinarySearchTree();
@@ -66,6 +89,9 @@ tree.insert(96);
 tree.insert(8);
 tree.insert(12);
 tree.insert(12);
-tree.insert(12);
+tree.insert(1);
+tree.insert(2);
+tree.insert(3);
 
-console.log(tree);
+console.log(tree, "tree");
+console.log(tree.find(96));
